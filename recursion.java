@@ -29,13 +29,15 @@ public class recursion{
       }
     }
 
-    /*Recursively find the n'th fibbonaci number in linear time
+    /**Recursively find the n'th fibbonaci number in linear time
      *fib(0) = 0; fib(1) = 1; fib(5) = 5
      *precondition: n is non-negative
+     *@return the fibbonacci number in the nth spot.
      */
-    /*public static int fib(int n){
-    }*/
-    public static int fibH(int n, int fNum, int sNum) {
+    public static int fib(int n){
+      return fibH(n, 0, 1);
+    }
+    private static int fibH(int n, int fNum, int sNum) {
       if (n == 0){
         return fNum;
       }else{
@@ -51,8 +53,9 @@ public class recursion{
       System.out.println(sqrt(0.0, .001));
       System.out.println(sqrt(2.0, .001));
       System.out.println(sqrt(100.0, .001));
-      System.out.println(fibH(5, 0, 1)); // 5
-      System.out.println(fibH(1, 0, 1)); //1
-      System.out.println(fibH(0, 0, 1)); //0
+      System.out.println(fib(5)); // 5
+      System.out.println(fib(1)); //1
+      System.out.println(fib(0)); //0
+      System.out.println(fib(6)); //8
     }
 }
