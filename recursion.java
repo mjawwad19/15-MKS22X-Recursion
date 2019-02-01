@@ -30,13 +30,21 @@ public class recursion{
     }
 
     /**Recursively find the n'th fibbonaci number in linear time
-     *fib(0) = 0; fib(1) = 1; fib(5) = 5
-     *precondition: n is non-negative
-     *@return the fibbonacci number in the nth spot.
-     */
+      *fib(0) = 0; fib(1) = 1; fib(5) = 5
+      *precondition: n is non-negative
+      *@param n is the position of the fibonacci number
+      *@return the fibbonacci number in the nth spot.
+      */
     public static int fib(int n){
       return fibH(n, 0, 1);
     }
+    /**
+      *findds the n'th fibbonacci number using tail recursion
+      *@param n is the index of the fibonacci number we want
+      *@param fNum is the first number in the sequence, usually 0
+      *@param sNum is the second number in the sequence, usually 1
+      *@return the fibonacci number in the nth spot given fNum and sNum
+      */
     private static int fibH(int n, int fNum, int sNum) {
       if (n == 0){
         return fNum;
