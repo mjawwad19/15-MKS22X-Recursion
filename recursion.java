@@ -30,12 +30,19 @@ public class recursion{
     }
 
     /*Recursively find the n'th fibbonaci number in linear time
-     *fib(0) = 1; fib(1) = 1; fib(5) = 5
+     *fib(0) = 0; fib(1) = 1; fib(5) = 5
      *precondition: n is non-negative
      */
-  /*  public static int fib(int n){
-
-  }*/
+    /*public static int fib(int n){
+    }*/
+    public static int fibH(int n, int fNum, int sNum) {
+      if (n == 0){
+        return fNum;
+      }else{
+        return fibH(n-1, sNum, sNum + fNum);
+        //else move forward -> 1 less n by default then, your first number is now what was previously your second, and your second number has to be the sum of the previous two (by fib rules)
+      }
+    }
 
     /*As Per classwork*/
     /*public static ArrayList<Integer> makeAllSums(){
@@ -44,5 +51,8 @@ public class recursion{
       System.out.println(sqrt(0.0, .001));
       System.out.println(sqrt(2.0, .001));
       System.out.println(sqrt(100.0, .001));
+      System.out.println(fibH(5, 0, 1)); // 5
+      System.out.println(fibH(1, 0, 1)); //1
+      System.out.println(fibH(0, 0, 1)); //0
     }
 }
