@@ -57,6 +57,12 @@ public class recursion{
     }
 
     /*As Per classwork*/
+    /**
+      *creates an arrayList of all subset totals of the numbers 1 to n inclusive.
+      *@param n is the limit/starting point
+      *@param partial is eiether 0 or the sum down (+n)
+      *@param L is the arrayList containing the totals.
+      */
     public static void msH(int n, int partial, ArrayList<Integer> L) {
       if (n == 0) L.add(partial);
       else {
@@ -65,11 +71,17 @@ public class recursion{
       }
       //return L;
     }
+
+    /**
+      *@param n is the starting point/limit of the range.
+      *@return an arrayList of all subset totals of the numbers 1 to n inclusive
+      */
     public static ArrayList<Integer> makeAllSums(int n){
       ArrayList<Integer> sumL = new ArrayList<>();
       msH(n, 0, sumL);
       return sumL;
     }
+    
     public static void main(String[]args){
       System.out.println(sqrt(0.0, .001)); //0
       System.out.println(sqrt(2.0, .001)); //1.412...
