@@ -57,16 +57,19 @@ public class recursion{
     }
 
     /*As Per classwork*/
-    public static ArrayList<Integer> msH(int n, int partial, ArrayList<Integer> L) {
+    public static void msH(int n, int partial, ArrayList<Integer> L) {
       if (n == 0) L.add(partial);
       else {
         msH(n-1, n+partial, L); //add
         msH(n-1, partial, L); //don't add
       }
-      return L;
+      //return L;
     }
-    /*public static ArrayList<Integer> makeAllSums(int n){
-    }*/
+    public static ArrayList<Integer> makeAllSums(int n){
+      ArrayList<Integer> sumL = new ArrayList<>();
+      msH(n, 0, sumL);
+      return sumL;
+    }
     public static void main(String[]args){
       System.out.println(sqrt(0.0, .001)); //0
       System.out.println(sqrt(2.0, .001)); //1.412...
@@ -75,7 +78,9 @@ public class recursion{
       System.out.println(fib(1)); //1
       System.out.println(fib(0)); //0
       System.out.println(fib(6)); //8
-      System.out.println(msH(3, 0, new ArrayList<Integer>())); // [0,1,2,3,3,4,5,6]
-      System.out.println(msH(2, 0, new ArrayList<Integer>())); // [0,1,2,3]
+      /*System.out.println(msH(3, 0, new ArrayList<Integer>())); // [0,1,2,3,3,4,5,6]
+      System.out.println(msH(2, 0, new ArrayList<Integer>())); // [0,1,2,3]*/
+      System.out.println(makeAllSums(3)); // [0,1,2,3,4,5,6]
+      System.out.println(makeAllSums(2)); //[0,1,2,3]
     }
 }
