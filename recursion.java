@@ -1,3 +1,4 @@
+import java.util.*;
 public class recursion{
     /*You may write additional private methods */
     /**
@@ -38,6 +39,7 @@ public class recursion{
     public static int fib(int n){
       return fibH(n, 0, 1);
     }
+
     /**
       *findds the n'th fibbonacci number using tail recursion
       *@param n is the index of the fibonacci number we want
@@ -55,15 +57,25 @@ public class recursion{
     }
 
     /*As Per classwork*/
-    /*public static ArrayList<Integer> makeAllSums(){
+    public static ArrayList<Integer> msH(int n, int partial, ArrayList<Integer> L) {
+      if (n == 0) L.add(partial);
+      else {
+        msH(n-1, n+partial, L); //add
+        msH(n-1, partial, L); //don't add
+      }
+      return L;
+    }
+    /*public static ArrayList<Integer> makeAllSums(int n){
     }*/
     public static void main(String[]args){
-      System.out.println(sqrt(0.0, .001));
-      System.out.println(sqrt(2.0, .001));
-      System.out.println(sqrt(100.0, .001));
+      System.out.println(sqrt(0.0, .001)); //0
+      System.out.println(sqrt(2.0, .001)); //1.412...
+      System.out.println(sqrt(100.0, .001)); ///roughly 10
       System.out.println(fib(5)); // 5
       System.out.println(fib(1)); //1
       System.out.println(fib(0)); //0
       System.out.println(fib(6)); //8
+      System.out.println(msH(3, 0, new ArrayList<Integer>())); // [0,1,2,3,3,4,5,6]
+      System.out.println(msH(2, 0, new ArrayList<Integer>())); // [0,1,2,3]
     }
 }
