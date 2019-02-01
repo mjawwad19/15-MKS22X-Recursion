@@ -23,7 +23,7 @@ public class recursion{
     */
     private static double sqrtH(double n, double guess, double tolerance){
       if (Math.abs(Math.pow(guess, 2) - n) / n > tolerance) {
-        return sqrtH(n, (n / guess + guess) / 2);
+        return sqrtH(n, (n / guess + guess) / 2, tolerance);
       }else {
         return guess;
       }
@@ -41,8 +41,8 @@ public class recursion{
     /*public static ArrayList<Integer> makeAllSums(){
     }*/
     public static void main(String[]args){
-      System.out.println(sqrt(0.0));
-      System.out.println(sqrt(2.0));
-      System.out.println(sqrt(100.0));
+      System.out.println(sqrt(0.0, .001));
+      System.out.println(sqrt(2.0, .001));
+      System.out.println(sqrt(100.0, .001));
     }
 }
