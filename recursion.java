@@ -154,19 +154,23 @@ public class recursion{
   }
 
     public static void main(String[]args){
-      System.out.println(sqrt(0.0, .001)); //0
+      /*System.out.println(sqrt(0.0, .001)); //0
       System.out.println(sqrt(2.0, .001)); //1.412...
       System.out.println(sqrt(100.0, .001)); ///roughly 10
       System.out.println(fib(5)); // 5
       System.out.println(fib(1)); //1
       System.out.println(fib(0)); //0
-      System.out.println(fib(6)); //8
-      testFib(5); //pass yes
-      testSqrt(2); //pass yes
-      System.out.println(closeEnough(sqrt(2.0, .001), Math.sqrt(2))); //true;
+      System.out.println(fib(6)); //8*/
+      for (int i = 0; i < 6; i++) {
+        testFib(5);
+      }
+      for (int i = 0; i < 5; i++) {
+        testSqrt(i);
+        System.out.println(closeEnough(sqrt(i,.0001), Math.sqrt(i)));
+      }
       /*System.out.println(msH(3, 0, new ArrayList<Integer>())); // [0,1,2,3,3,4,5,6]
-      System.out.println(msH(2, 0, new ArrayList<Integer>())); // [0,1,2,3]*/
+      System.out.println(msH(2, 0, new ArrayList<Integer>())); // [0,1,2,3]
       System.out.println(makeAllSums(3)); // [0,1,2,3,4,5,6]
-      System.out.println(makeAllSums(2)); //[0,1,2,3]
+      System.out.println(makeAllSums(2)); //[0,1,2,3]*/
     }
 }
